@@ -48,6 +48,13 @@ unit-test:
   script:
     - npm test
 
+integration-test:
+  stage: test
+  needs:
+    - job: unit-test  # Dépend de unit-test
+  script:
+    - echo "Hello Integration !"
+
 e2e-test:
   stage: test
   rules:
