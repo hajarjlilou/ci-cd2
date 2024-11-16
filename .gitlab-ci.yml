@@ -28,6 +28,15 @@ lint:
   script:
     - npm run lint
 
+only-canary:
+  stage: validate
+  rules:
+    - if: '$ENV_TARGET == "canary"'
+      when: always
+    - when: never
+  script:
+    - echo "Hello Only Canary !"
+
 unit-test:
   stage: test
   rules:
