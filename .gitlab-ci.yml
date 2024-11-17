@@ -32,6 +32,7 @@ only-canary:
   stage: validate
   rules:
     - if: '$ENV_TARGET == "canary"'
+      when: always
   script:
     - echo "Hello Only Canary !"
 
