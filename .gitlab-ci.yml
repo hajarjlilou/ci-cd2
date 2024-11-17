@@ -12,7 +12,7 @@ cache:
 stages:
   - validate
   - test
-  - post-test # Nouveau stage
+  - post-test
   - build
   - release
   - deploy
@@ -20,6 +20,7 @@ stages:
 install:
   stage: .pre
   script:
+    # define cache dir & use it npm!
     - npm ci --cache .npm --prefer-offline
 
 lint:
@@ -57,9 +58,9 @@ integration-test:
     - echo "Hello Integration !"
 
 e2e-test:
-  stage: post-test # Déplacé dans un stage séparé
+  stage: post-test
   needs:
-    - job: integration-test # Dépend de integration-test
+    - job: integration-test
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
   script:
