@@ -12,7 +12,8 @@ cache:
 stages:
   - validate
   - test
-  - post-test
+  - integration  # Nouveau stage
+  - post-test    # nouveau stage pour exo4
   - build
   - release
   - deploy
@@ -62,7 +63,7 @@ unit-test:
     - npm test
 
 integration-test:
-  stage: test
+  stage: integration
   needs:
     - job: unit-test  # Dépend de unit-test
   script:
