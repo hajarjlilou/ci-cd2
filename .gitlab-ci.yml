@@ -12,8 +12,8 @@ cache:
 stages:
   - validate
   - test
-  - integration  # Nouveau stage
-  - post-test    # nouveau stage pour exo4
+  - integration
+  - post-test  # Déplacé après integration
   - build
   - release
   - deploy
