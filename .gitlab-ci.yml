@@ -57,7 +57,7 @@ integration-test:
     - echo "Hello Integration !"
 
 e2e-test:
-  stage: test
+  stage: post-test
   needs:
     - job: integration-test
   rules:
