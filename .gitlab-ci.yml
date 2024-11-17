@@ -12,6 +12,7 @@ cache:
 stages:
   - validate
   - test
+  - post-test
   - build
   - release
   - deploy
