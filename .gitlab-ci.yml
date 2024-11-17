@@ -1,3 +1,5 @@
+variables:
+  ENV_TARGET: "canary"
 image: node:latest
 cache:
   key:
