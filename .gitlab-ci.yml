@@ -15,8 +15,8 @@ stages:
   - .pre
   - validate
   - test
-  - post-test
   - integration
+  - e2e
   - build
   - release
   - deploy
@@ -61,7 +61,7 @@ integration-test:
     - echo "Hello Integration !"
 
 e2e-test:
-  stage: post-test
+  stage: e2e
   needs:
     - job: integration-test
   rules:
