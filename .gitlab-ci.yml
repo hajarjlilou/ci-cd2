@@ -14,7 +14,6 @@ stages:
   - validate
   - unit-test
   - integration-test
-  - e2e-test
   - test
   - build
   - release
@@ -58,9 +57,10 @@ integration-test:
     - echo "Hello Integration !"
 
 e2e-test:
-  stage: e2e-test
+  stage: test
   needs:
     - job: integration-test
+      dependencies: false  # This is the important addition
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
   script:
