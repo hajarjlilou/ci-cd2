@@ -60,7 +60,6 @@ e2e-test:
   stage: test
   needs:
     - job: integration-test
-      dependencies: false  # This is the important addition
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
   script:
