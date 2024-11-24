@@ -14,7 +14,7 @@ stages:
   - validate
   - test
   - integration
-  - post-integration
+  - post-test
   - build
   - release
   - deploy
@@ -57,9 +57,9 @@ integration-test:
     - echo "Hello Integration !"
 
 e2e-test:
-  stage: post-integration # Changed stage to "post-integration"
+  stage: post-integration
   needs:
-    - job: integration-test
+    - job: post-test
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
   script:
