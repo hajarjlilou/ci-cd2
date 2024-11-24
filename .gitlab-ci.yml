@@ -64,8 +64,6 @@ e2e-test:
     - echo "Hello E2E !"
   needs:
     job: integration-test
-    artifacts: false
-
 
 release:
   stage: release
