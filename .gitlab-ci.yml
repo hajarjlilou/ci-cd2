@@ -12,6 +12,9 @@ cache:
 
 stages:
   - validate
+  - unit-test
+  - integration-test
+  - e2e-test
   - test
   - build
   - release
@@ -39,14 +42,14 @@ only-canary:
     - echo "Hello Only Canary !"
 
 unit-test:
-  stage: test
+  stage: unit-test
   rules:
     - if: '$CI_COMMIT_TAG == null && $CI_COMMIT_TITLE !~ /^chore: release/'
   script:
     - npm test
 
 integration-test:
-  stage: test
+  stage: integration-test
   needs:
     - job: unit-test
   rules:
@@ -55,7 +58,7 @@ integration-test:
     - echo "Hello Integration !"
 
 e2e-test:
-  stage: test
+  stage: e2e-test
   needs:
     - job: integration-test
   rules:
