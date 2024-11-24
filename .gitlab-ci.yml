@@ -62,8 +62,7 @@ e2e-test:
   script:
     - echo "Hello E2E !"
   needs:
-  - job: integration-test
-    dependencies: false
+  - integration-test
 
 release:
   stage: release
