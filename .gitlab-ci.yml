@@ -13,6 +13,7 @@ cache:
 stages:
   - validate
   - test
+  - teste2e
   - build
   - release
   - deploy
@@ -55,7 +56,7 @@ integration-test:
     job: unit-test
     
 e2e-test:
-  stage: test
+  stage: teste2e
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
   script:
