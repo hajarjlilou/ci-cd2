@@ -31,7 +31,7 @@ lint:
     - npm run lint
 
 only-canary:
-  stage: validate
+  stage: test
   rules:
     - if: '$ENV_TARGET == "canary"'
       when: always
