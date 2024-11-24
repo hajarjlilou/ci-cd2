@@ -12,6 +12,9 @@ cache:
 
 stages:
   - validate
+  - test1
+  - test2
+  - test3
   - test
   - build
   - release
@@ -39,14 +42,14 @@ only-canary:
     - echo "Hello Only Canary !"
 
 unit-test:
-  stage: test
+  stage: test1
   rules:
     - if: '$CI_COMMIT_TAG == null && $CI_COMMIT_TITLE !~ /^chore: release/'
   script:
     - npm test
 
 integration-test:
-  stage: test
+  stage: test2
   rules: 
     - if: '$CI_COMMIT_BRANCH == "master" && $CI_COMMIT_TAG == null && $CI_COMMIT_TITLE !~ /^chore: release/'
   script:
@@ -56,7 +59,7 @@ integration-test:
     artifacts: false
 
 e2e-test:
-  stage: test
+  stage: test3
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
   script:
