@@ -12,8 +12,8 @@ cache:
 
 stages:
   - validate
-  - integration
   - test
+  - integration
   - build
   - release
   - deploy
