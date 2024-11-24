@@ -53,16 +53,13 @@ integration-test:
     echo "Hello Integration !"
   needs:
     job: unit-test
-    artifacts: false
-
+    
 e2e-test:
   stage: test
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
   script:
     - echo "Hello E2E !"
-  needs:
-  - integration-test
 
 release:
   stage: release
