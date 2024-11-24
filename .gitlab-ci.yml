@@ -14,7 +14,6 @@ stages:
   - validate
   - test
   - integration
-  - post-test
   - build
   - release
   - deploy
