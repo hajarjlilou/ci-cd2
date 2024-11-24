@@ -45,6 +45,15 @@ unit-test:
   script:
     - npm test
 
+integration-test:
+  stage: test
+  script:
+    echo "Hello Integration !"
+  needs:
+    job: unit-test
+    artifacts: false
+
+
 e2e-test:
   stage: test
   rules:
