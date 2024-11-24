@@ -14,6 +14,7 @@ stages:
   - validate
   - test
   - integration
+  - post-test
   - build
   - release
   - deploy
@@ -57,7 +58,7 @@ unit-test:
     - npm test
 
 e2e-test:
-  stage: test
+  stage: post-test
   needs:
     - job: integration-test
   rules:
