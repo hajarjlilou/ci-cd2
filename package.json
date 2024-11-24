@@ -1,7 +1,7 @@
 {
   "name": "ci-cd",
   "private": true,
-  "version": "0.0.8",
+  "version": "0.0.1",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
@@ -30,8 +30,5 @@
     "git": {
       "commitMessage": "chore: release v${version}"
     }
-  },
-  "description": "Ce projet ne fait que réagir à une requête GET sur la route /auth/:secret.  \r Si le secret est sous la forme `secret-<SECRET>` et qu'il correspond au secret contenu dans la variable d'environnement `PASSPHRASE` ou par défaut 'mysecretphrase'.",
-  "author": "",
-  "license": "ISC"
+  }
 }
