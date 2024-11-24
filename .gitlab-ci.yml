@@ -12,6 +12,7 @@ cache:
 
 stages:
   - validate
+  - integration
   - test
   - build
   - release
@@ -39,7 +40,7 @@ only-canary:
     - echo "Hello Only Canary !"
 
 integration-test:
-  stage: test # Placé dans un stage séparé
+  stage: integration # Placé dans un stage séparé
   needs:
     - job: unit-test
   rules:
