@@ -13,7 +13,6 @@ cache:
 stages:
   - validate
   - test
-  - integration
   - build
   - release
   - deploy
@@ -56,7 +55,7 @@ integration-test:
     - echo "Hello Integration !"
 
 e2e-test:
-  stage: integration
+  stage: test
   needs:
     - job: integration-test
   rules:
