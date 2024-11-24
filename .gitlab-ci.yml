@@ -48,7 +48,7 @@ unit-test:
     - npm test
 
 integration-test:
-  stage: integration
+  stage: test
   needs:
     - job: unit-test
   rules:
@@ -57,7 +57,7 @@ integration-test:
     - echo "Hello Integration !"
 
 e2e-test:
-  stage: post-test
+  stage: integration
   needs:
     - job: integration-test
   rules:
