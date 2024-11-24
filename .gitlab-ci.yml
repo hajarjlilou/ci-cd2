@@ -57,9 +57,9 @@ integration-test:
     - echo "Hello Integration !"
 
 e2e-test:
-  stage: post-integration
+  stage: post-test
   needs:
-    - job: post-test
+    - job: integration-test
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
   script:
